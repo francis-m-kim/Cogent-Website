@@ -22,14 +22,17 @@ $(document).ready(function() {
     wipeOutNonMobile();
     randomizeMobileClouds();
   } else {
-    cloudControl();
+    //cloudControl();
+    $("html").niceScroll();
     floatHeroBlimp();
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
-    resizeBuildings();
   }
 })
+
+
+
 
 
 
@@ -211,7 +214,7 @@ function sectionAnimations() {
         },
         ease:Power1.easeInOut
       },
-      duration: 300
+      duration: 400
     },
     "#services-image": {
       in: {left: "-50%"},
@@ -231,8 +234,8 @@ function sectionAnimations() {
 
   SECTIONS.forEach(function(section) {
     var imageID = "#" + section + "-image";
-    var tweenIn = TweenMax.from(imageID, 1, ANIMPARAMS[imageID].in)
-    var tweenOut = TweenMax.to(imageID, 1, ANIMPARAMS[imageID].out)
+    var tweenIn = TweenMax.from(imageID, .5, ANIMPARAMS[imageID].in)
+    var tweenOut = TweenMax.to(imageID, .5, ANIMPARAMS[imageID].out)
 
     var sceneIn = new ScrollMagic.Scene({
       triggerElement: "#trigger-" + section + "-in",
@@ -241,7 +244,7 @@ function sectionAnimations() {
 
     var sceneOut = new ScrollMagic.Scene({
       triggerElement: "#trigger-" + section + "-out",
-      offset: 600,
+      offset: 1000,
       duration: ANIMPARAMS[imageID].duration
     }).setTween(tweenOut)
 
@@ -290,4 +293,15 @@ function buildingAnimation() {
     }).setTween(tweenBuilding);
     controller.addScene([sceneBuilding]);
   })
+
+  var tweenIcons = TweenMax.from('.icon-container', .1, {opacity: 0})
+  var sceneIcons = new ScrollMagic.Scene({
+    triggerElement: "#trigger-footer-in",
+    offset: 0,
+    duration: 100,
+    ease: Power1.easeIn
+  }).setTween(tweenIcons);
+  controller.addScene([sceneIcons]);
+
+
 }
