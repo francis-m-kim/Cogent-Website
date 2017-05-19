@@ -1,0 +1,371 @@
+$cogent-red: #b82025;
+$default-font-size: 17px;
+$large-font-size: 45px;
+
+body {
+  transition: all 1s;
+  // background-image: linear-gradient(#03548b, #5fc5f4, #b8b6a1);
+}
+
+.header-opacity-layer{
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+  opacity: .9;
+  background: lightblue;
+}
+
+// ---- NAVBAR STYLE OVERRIDES ---- //
+
+.cogent-letters {
+  transition: all .6s;
+  filter: brightness(0) invert(100%);
+  // &:hover {
+  //   filter: brightness(1) invert(0%);
+  // }
+}
+
+.header .navbar-nav li a {
+  @media (max-width: 768px) {
+    padding: .5em 1em;
+
+  }
+}
+
+.navbar-nav {
+  margin: 0em -15px;
+}
+.nav>li.navbar-separator{
+  margin-left: -20px;
+  margin-right: -20px;
+  @media (max-width: 768px) {
+    display:none;
+  }
+}
+.navbar-collapse {
+  border-top: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mobile_menu_btn {
+  transition: all .4s ease-in-out;
+}
+.mobile_menu_btn span{
+  transition: all .4s ease-in-out;
+}
+.mobile_menu_btn:hover{
+  border: 1px solid #b82025;
+}
+.mobile_menu_btn span.hovered{
+  background-color: #b82025;
+}
+
+.clouds {
+  z-index: -1;
+  position: absolute;
+}
+
+.hero-blimp {
+  transition: all .5s ease-in-out;
+}
+
+.cogent-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+}
+
+.cogent-spacing {
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin vertical-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin horizontal-centered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.for-mobile {
+  display: none;
+}
+
+.moveable-image {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  @include centered;
+}
+
+
+#about-image {
+  position: fixed;
+  width: 85%;
+}
+#services-image {
+  position: fixed;
+}
+
+#jobs-image {
+  width: 70%;
+  position: fixed;
+}
+
+#contact-image {
+  width: 25vh;
+  top: 25vh;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  &:hover {
+    width: 26vh;
+  }
+}
+
+.icon-container {
+  position:fixed;
+  color: white;
+  max-width: 100%;
+  height: auto;
+  @include vertical-centered;
+  i {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+  }
+  .icon-label {
+    font-size: 20px;
+  }
+  #strategy{
+
+  }
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(-40vw);
+  z-index: 1000;
+
+}
+
+.building-container {
+  position: relative;
+}
+
+.building {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  #back {
+    z-index: 0
+  }
+  #mid {
+    z-index: 1
+  }
+  #front {
+    z-index: 2
+  }
+}
+
+.footer-icons {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+
+
+
+
+.cogent-definition-box {
+  position: absolute;
+  @include centered;
+  color: white;
+}
+
+
+.cogent-definition-header {
+  font-size: 52px;
+  font-weight: 500;
+}
+
+.cogent-definition-text {
+  font-size: $default-font-size;
+  line-height: 1.9em;
+}
+
+.cogent-definition-separator {
+  max-width: 27.35em;
+  border: 1px solid white;
+  margin-left: 0;
+  margin-top: 23px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+  .cogent-definition-header {
+    font-size: 38px;
+  }
+}
+
+
+
+// SERVICES SECTION
+
+.services-box {
+  position: absolute;
+  @include centered;
+  color: white;
+  font-size: $default-font-size;
+  line-height: 1.9em;
+}
+
+.services-title {
+  // font-size: $large-font-size;
+  // position: absolute;
+  // @include centered;
+  // min-width: 8em;
+  padding:10px;
+  background: white;
+  color: lightblue;
+  text-align: center;
+}
+//
+// .services-item {
+//   font-size: $default-font-size;
+//   position: absolute;
+//   @include centered;
+//   color: $cogent-red;
+//   border: 1px solid red;
+// }
+
+
+
+.section_title{
+
+    color: white;
+    i {
+      font-size: 36PX;
+
+    }
+    h6 {
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-top: 0;
+
+    }
+    h3 {
+
+      font-weight: 500;
+      font-size: 32px;
+      font-family: 'Roboto', sans-serif;
+    }
+}
+
+
+@media all and (max-width: 767px) {
+    .section_title h3{
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 24px;
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+// ADAGE SECTION
+
+.adage-box {
+  position: absolute;
+  @include centered;
+  color: white;
+  width: 100%;
+}
+
+.adage-title {
+  font-size: $large-font-size;
+  text-align: center;
+  line-height: .9em;
+  margin-bottom: 2em;
+
+}
+.adage-quote {
+  font-size: $default-font-size;
+}
+
+.adage-attribution {
+  width: 200px;
+  margin-top: 2em;
+  filter: brightness(0) invert(1);
+}
+.join-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 4em;
+
+  background: white;
+  color: lightblue;
+  font-size: 15px;
+
+  transition: all .5s;
+  &:hover {
+    color: white;
+    background: $cogent-red;
+  }
+  &:focus:hover {
+    color: white;
+  }
+  &:focus {
+    color: lightblue;
+    outline: 0;
+  }
+  &:active {
+    background-color: darkred;
+    transform: translateY(2px);
+  }
+  &:active:focus {
+    outline: 0;
+  }
+}
+
+
+
+
+
+
+
+
+// .building {
+//   position: fixed;
+//   width: 100%;
+//   height: auto; }
+//   .building #back {
+//     z-index: 0; }
+//   .building #mid {
+//     z-index: 1; }
+//   .building #front {
+//     z-index: 2; }
+//
+
+//
+// .block {
+//   width: 100%;
+//   height: 500px;
+//   font-size: 30px;
+//   text-align: center; }
+//   .block:nth-child(2) {
+//     background: red; }
