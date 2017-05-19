@@ -9,6 +9,7 @@ function wipeOutNonMobile() {
   $('.not-mobile').remove();
   $('.cogent-spacing').remove();
   $('.for-mobile').show();
+  $('.navbar-fixed-top').attr('id','navbar-mobile-fix');
 }
 
 $(document).ready(function() {
@@ -19,10 +20,10 @@ $(document).ready(function() {
   chooseGradient(hourNow());
 
   if (isMobile()) {
+    //randomizeMobileClouds();
     wipeOutNonMobile();
-    randomizeMobileClouds();
   } else {
-    //cloudControl();
+    cloudControl();
     $("html").niceScroll();
     floatHeroBlimp();
     sectionAnimations();
@@ -85,7 +86,7 @@ function randomize(num, ambit) {
 }
 
 function cloudControl() {
-  var LOOP_TIME = 80000;
+  var LOOP_TIME = 100000;
 
   function move($cloud, amount, time) {
     $cloud.animate({left: amount}, time, "linear", function() {
@@ -129,7 +130,7 @@ function chooseGradient(hour) {
     afternoon: [
       { r: 0, g: 81, b: 136 },
       { r: 95, g: 197, b: 244 },
-      { r: 205, g: 178, b: 143 }
+      { r: 50, g: 120, b: 200 }
     ],
     evening: [
       { r: 87, g: 56, b: 53 },
@@ -172,7 +173,7 @@ function setBackground(gradient) {
 
 function floatHeroBlimp() {
   var radians = 0;
-  var multiplier = .666; //the NUMBER OF THE BEAST
+  var multiplier = .333; //the NUMBER OF THE BEAST
   (function moveRandom() {
     var moveAmount = "-=" + Math.cos(radians) * multiplier + "%";
     $('#hero-blimp').animate({top: moveAmount}, 100, function() {
@@ -273,11 +274,11 @@ function bestPlaceAnimation() {
 
 
 function buildingAnimation() {
-  var tweenContainer = TweenMax.from('.building-container', .1, {opacity: 0, top: '200px'})
+  var tweenContainer = TweenMax.from('.building-container', .1, {opacity: 1, top: '1000px'})
   var sceneContainer = new ScrollMagic.Scene({
     triggerElement: "#trigger-footer-in",
     offset: 0,
-    duration: 100,
+    duration: 600,
     ease: Power4.easeIn
   }).setTween(tweenContainer);
   controller.addScene([sceneContainer]);

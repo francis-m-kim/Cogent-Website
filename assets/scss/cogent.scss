@@ -49,6 +49,7 @@ body {
   box-shadow: none;
 }
 
+
 .mobile_menu_btn {
   transition: all .4s ease-in-out;
 }
@@ -71,6 +72,12 @@ body {
   transition: all .5s ease-in-out;
 }
 
+#mobile-hero-blimp {
+  width: 85%;
+}
+#mobile-best-places{
+  width: 70%;
+}
 .cogent-section {
   position: relative;
   width: 100%;
@@ -125,6 +132,22 @@ body {
   }
 }
 
+.icon-container-mobile{
+  font-size: 17px;
+  color: white;
+  margin-top: -33px;
+  position: absolute;
+  @include horizontal-centered;
+  a {
+    color: white;
+  }
+  a:nth-child(2) {
+    padding: 0 10px !important;
+  }
+
+
+}
+
 .for-mobile {
   display: none;
 }
@@ -160,6 +183,7 @@ body {
     width: 26vh;
   }
 }
+
 
 
 .footer {
