@@ -16,7 +16,7 @@ $(document).ready(function() {
   var color = {r:0, g:0, b:0};
   anchorTagScroll();
   mobileMenuButtonHover();
-  contactButtons();
+  //contactButtons();
   chooseGradient(hourNow());
 
   if (isMobile()) {
@@ -29,6 +29,7 @@ $(document).ready(function() {
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
+    foregroundClouds();
   }
 })
 
@@ -36,6 +37,24 @@ $(document).ready(function() {
 
 
 
+
+function foregroundClouds(){
+
+  const numClouds = $('.foreground').length;
+  for (var i = 0; i < numClouds; i++) {
+
+    var cloudID = "#foreground-cloud"+(i+1);
+    var triggerID = "#cloud-trigger"+(i+1);
+    var tween = TweenMax.from(cloudID, 1, {top:"100%"} );
+    var scene = new ScrollMagic.Scene({
+      triggerElement: triggerID,
+      offset: 0,
+      duration: 8000
+    }).setTween(tween);
+    controller.addScene(scene);
+  }
+
+}
 
 function anchorTagScroll() {
   var ORDER = ['#home', '#about', '#services', '#jobs', '#contact'];
@@ -224,10 +243,10 @@ function sectionAnimations() {
       ease:Power3.easeInOut
     },
     "#contact-image": {
-      in: {opacity:0, top: "250%"},
+      in: {top: "100%"},
       offset: 100,
-      duration: 300,
-      ease: SlowMo.ease.config(0.3, 0.7, false)
+      duration: 400,
+      ease: Sine.easeOut
     }
   }
 
@@ -278,17 +297,17 @@ function buildingAnimation() {
   var sceneContainer = new ScrollMagic.Scene({
     triggerElement: "#trigger-footer-in",
     offset: 0,
-    duration: 600,
+    duration: 400,
     ease: Power4.easeIn
   }).setTween(tweenContainer);
   controller.addScene([sceneContainer]);
 
   var buildings = ["#front", "#mid", "#back"];
   buildings.forEach(function(building, idx) {
-    var tweenBuilding = TweenMax.from(building, .1, {top: (-6 * idx) + "vh"});
+    var tweenBuilding = TweenMax.from(building, .1, {top: (-14 * idx) + "vh"});
     var sceneBuilding = new ScrollMagic.Scene({
       triggerElement: "#trigger-footer-in",
-      offset: 200,
+      offset: 250,
       duration: 200,
       ease: Bounce.easeInOut
     }).setTween(tweenBuilding);
@@ -298,7 +317,7 @@ function buildingAnimation() {
   var tweenIcons = TweenMax.from('.icon-container', .1, {opacity: 0})
   var sceneIcons = new ScrollMagic.Scene({
     triggerElement: "#trigger-footer-in",
-    offset: 0,
+    offset: 300,
     duration: 100,
     ease: Power1.easeIn
   }).setTween(tweenIcons);
