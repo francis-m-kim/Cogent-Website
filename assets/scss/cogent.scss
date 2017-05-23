@@ -2,6 +2,21 @@ $cogent-red: #b82025;
 $default-font-size: 17px;
 $large-font-size: 45px;
 
+@mixin vertical-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin horizontal-centered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 body {
   transition: all 1s;
   // background-image: linear-gradient(#03548b, #5fc5f4, #b8b6a1);
@@ -10,11 +25,56 @@ body {
 
 
 
+
+
 .foreground{
   position: fixed;
   z-index: -1;
-  top:-40%;
+
 }
+
+
+//#cloud-trigger1{
+//
+//}
+//
+//#cloud-trigger1{
+//
+//}
+//
+//#cloud-trigger1{
+//
+//}
+//
+//#cloud-trigger1{
+//
+//}
+//
+//#cloud-trigger1{
+//
+//}
+
+
+#foreground-cloud1{
+  right: -3%;
+  top: 45%;
+}
+#foreground-cloud2{
+  top:100%;
+
+}
+#foreground-cloud3{
+  top:900%;
+
+}
+#foreground-cloud4{
+
+  top:100%;
+
+}
+
+
+
 
 .header-opacity-layer{
   position: fixed;
@@ -115,19 +175,7 @@ body {
 
 
 
-@mixin vertical-centered {
-  top: 50%;
-  transform: translateY(-50%);
-}
-@mixin horizontal-centered {
-  left: 50%;
-  transform: translateX(-50%);
-}
-@mixin centered {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 
 .icon-container {
   font-size: 17px;
@@ -187,8 +235,8 @@ body {
 }
 
 #contact-image {
-  width: 25vh;
-  top: 25vh;
+  width: 37vh;
+  top: 20vh;
   cursor: pointer;
   transition: all .3s ease-in-out;
   &:hover {

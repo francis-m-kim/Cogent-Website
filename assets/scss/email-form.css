@@ -1,0 +1,21 @@
+.blimp-container {
+  text-align: center; }
+
+#email-form {
+  color: grey;
+  margin: 0 auto;
+  margin-top: 15%;
+  width: 80%;
+  max-width: 600px; }
+  #email-form input, #email-form textarea, #email-form button {
+    border: 1px solid red;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 10px 5px 0px red; }
+  #email-form button {
+    background: salmon;
+    color: white; }
+
+/*# sourceMappingURL=email-form.css.map */

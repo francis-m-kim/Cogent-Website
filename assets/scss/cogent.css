@@ -1,0 +1,277 @@
+body {
+  transition: all 1s; }
+
+.foreground {
+  position: fixed;
+  z-index: -1; }
+
+#foreground-cloud1 {
+  right: -3%;
+  top: 45%; }
+
+#foreground-cloud2 {
+  top: 100%; }
+
+#foreground-cloud3 {
+  top: 900%; }
+
+#foreground-cloud4 {
+  top: 100%; }
+
+.header-opacity-layer {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  z-index: 1;
+  opacity: .9;
+  background: lightblue; }
+
+.cogent-letters {
+  transition: all .6s;
+  filter: brightness(0) invert(100%); }
+
+@media (max-width: 768px) {
+  .header .navbar-nav li a {
+    padding: .5em 1em; } }
+
+.navbar-nav {
+  margin: 0em -15px; }
+
+.nav > li.navbar-separator {
+  margin-left: -20px;
+  margin-right: -20px; }
+  @media (max-width: 768px) {
+    .nav > li.navbar-separator {
+      display: none; } }
+
+.navbar-collapse {
+  border-top: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.mobile_menu_btn {
+  transition: all .4s ease-in-out; }
+
+.mobile_menu_btn span {
+  transition: all .4s ease-in-out; }
+
+.mobile_menu_btn:hover {
+  border: 1px solid #b82025; }
+
+.mobile_menu_btn span.hovered {
+  background-color: #b82025; }
+
+.clouds {
+  z-index: -2;
+  position: absolute;
+  width: 50%;
+  height: auto; }
+
+.hero-blimp {
+  transition: all .5s ease-in-out; }
+
+#mobile-hero-blimp {
+  width: 85%; }
+
+#mobile-best-places {
+  width: 70%; }
+
+.cogent-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px; }
+
+.cogent-spacing {
+  width: 100%; }
+  .cogent-spacing#home-about {
+    height: 50vh; }
+  .cogent-spacing#about-services {
+    height: 133vh; }
+  .cogent-spacing#services-jobs {
+    height: 100vh; }
+  .cogent-spacing#jobs-contact {
+    height: 50vh; }
+
+.icon-container {
+  font-size: 17px;
+  color: white;
+  position: fixed;
+  z-index: 10000000;
+  top: 97.2%;
+  left: 50%;
+  transform: translateX(-50%); }
+  .icon-container a {
+    color: white; }
+  .icon-container a:nth-child(2) {
+    padding: 0 10px !important; }
+
+.icon-container-mobile {
+  font-size: 17px;
+  color: white;
+  margin-top: -33px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
+  .icon-container-mobile a {
+    color: white; }
+  .icon-container-mobile a:nth-child(2) {
+    padding: 0 10px !important; }
+
+.for-mobile {
+  display: none; }
+
+.moveable-image {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#about-image {
+  position: fixed;
+  width: 85%;
+  max-width: 1300px; }
+
+#services-image {
+  position: fixed; }
+
+#jobs-image {
+  width: 70%;
+  position: fixed; }
+
+#contact-image {
+  width: 37vh;
+  top: 20vh;
+  cursor: pointer;
+  transition: all .3s ease-in-out; }
+  #contact-image:hover {
+    width: 26vh; }
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(-40vw);
+  z-index: 1000; }
+
+.building-container {
+  position: relative; }
+
+.building {
+  position: absolute;
+  width: 100%;
+  height: auto; }
+  .building #back {
+    z-index: 0; }
+  .building #mid {
+    z-index: 1; }
+  .building #front {
+    z-index: 2; }
+
+.cogent-definition-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; }
+
+.cogent-definition-header {
+  font-size: 52px;
+  font-weight: 500; }
+
+.cogent-definition-text {
+  font-size: 17px;
+  line-height: 1.9em; }
+
+.cogent-definition-separator {
+  max-width: 27.35em;
+  border: 1px solid white;
+  margin-left: 0;
+  margin-top: 23px;
+  margin-bottom: 15px; }
+
+@media (max-width: 767px) {
+  .cogent-definition-header {
+    font-size: 38px; } }
+.services-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 17px;
+  line-height: 1.9em; }
+
+.services-title {
+  padding: 10px;
+  background: white;
+  color: lightblue;
+  text-align: center; }
+
+.section_title {
+  color: white; }
+  .section_title i {
+    font-size: 36PX; }
+  .section_title h6 {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 0; }
+  .section_title h3 {
+    font-weight: 500;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif; }
+
+@media all and (max-width: 767px) {
+  .section_title h3 {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif; } }
+.adage-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%; }
+
+.adage-title {
+  font-size: 45px;
+  text-align: center;
+  line-height: .9em;
+  margin-bottom: 2em; }
+
+.adage-quote {
+  font-size: 17px; }
+
+.adage-attribution {
+  width: 200px;
+  margin-top: 2em;
+  filter: brightness(0) invert(1); }
+
+.join-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 4em;
+  background: white;
+  color: lightblue;
+  font-size: 15px;
+  transition: all .5s; }
+  .join-button:hover {
+    color: white;
+    background: #b82025; }
+  .join-button:focus:hover {
+    color: white; }
+  .join-button:focus {
+    color: lightblue;
+    outline: 0; }
+  .join-button:active {
+    background-color: darkred;
+    transform: translateY(2px); }
+  .join-button:active:focus {
+    outline: 0; }
+
+/*# sourceMappingURL=cogent.css.map */

@@ -7,9 +7,7 @@
     "prefix": "postcss -u autoprefixer -r assets/css/*",
     "build:css": "npm run scss && npm run prefix",
     "watch:scss": "onchange 'assets/scss/*.scss' -- npm run build:css",
-    "postinstall": "mkdir -p assets/scss; echo \"node_modules\" > .gitignore",
-    "tsc": "./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run ts:compile\"",
-    "ts:compile": "tsc --outDir ./assets/js --module commonjs ./src/*.ts"
+    "postinstall": "mkdir -p assets/scss; echo \"node_modules\" > .gitignore"
   },
   "author": "Francis Kim",
   "license": "ISC",

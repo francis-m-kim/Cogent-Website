@@ -23,9 +23,9 @@ $(document).ready(function() {
     //randomizeMobileClouds();
     wipeOutNonMobile();
   } else {
-    cloudControl();
+    //cloudControl();
     $("html").niceScroll();
-    floatHeroBlimp();
+    // floatHeroBlimp();
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
@@ -40,19 +40,32 @@ $(document).ready(function() {
 
 function foregroundClouds(){
 
-  const numClouds = $('.foreground').length;
-  for (var i = 0; i < numClouds; i++) {
+    var tween1 = TweenMax.to('#foreground-cloud1',1,{top:'-100%'});
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#cloud-trigger1',
+        offset: 500,
+        duration: '600%'
+    }).setTween(tween1)
+        .addIndicators();
+    controller.addScene(scene1);
 
-    var cloudID = "#foreground-cloud"+(i+1);
-    var triggerID = "#cloud-trigger"+(i+1);
-    var tween = TweenMax.from(cloudID, 1, {top:"100%"} );
-    var scene = new ScrollMagic.Scene({
-      triggerElement: triggerID,
-      offset: 0,
-      duration: 8000
-    }).setTween(tween);
-    controller.addScene(scene);
-  }
+    var tween2 = TweenMax.to('#foreground-cloud2',1,{top:'-100%'});
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: '#cloud-trigger2',
+        offset: 500,
+        duration: '600%'
+    }).setTween(tween2)
+        .addIndicators();
+    controller.addScene(scene2);
+
+    var tween3 = TweenMax.to('#foreground-cloud3',1,{top:'-100%'});
+    var scene3 = new ScrollMagic.Scene({
+        triggerElement: '#cloud-trigger3',
+        offset: 500,
+        duration: '600%'
+    }).setTween(tween3)
+        .addIndicators();
+    controller.addScene(scene3);
 
 }
 
@@ -203,8 +216,12 @@ function floatHeroBlimp() {
 }
 
 function sectionAnimations() {
-  SECTIONS = ["about", "services", "contact"]
-  ANIMPARAMS = {
+    var aboutServicesDuration = window.innerHeight * (5/6);
+    var aboutServicesOffset = aboutServicesDuration * (7/4);
+
+
+    SECTIONS = ["about", "services", "contact"]
+    ANIMPARAMS = {
     "#about-image": {
       in: {
         bezier: {
@@ -234,21 +251,27 @@ function sectionAnimations() {
         },
         ease:Power1.easeInOut
       },
-      duration: 400
+      duration: aboutServicesDuration,
+      offset: aboutServicesOffset
     },
     "#services-image": {
       in: {left: "-50%"},
       out: {left: "150%"},
-      duration: 300,
+      duration: aboutServicesDuration,
+        offset: aboutServicesDuration * (5/4),
       ease:Power3.easeInOut
     },
     "#contact-image": {
       in: {top: "100%"},
-      offset: 100,
-      duration: 400,
+      offset: aboutServicesDuration * (5/4),
+      duration: aboutServicesDuration * (4/5),
       ease: Sine.easeOut
     }
   }
+  // console.log(ANIMPARAMS);
+
+
+
 
   controller = new ScrollMagic.Controller();
 
@@ -264,7 +287,7 @@ function sectionAnimations() {
 
     var sceneOut = new ScrollMagic.Scene({
       triggerElement: "#trigger-" + section + "-out",
-      offset: 1000,
+      offset: ANIMPARAMS[imageID].offset,
       duration: ANIMPARAMS[imageID].duration
     }).setTween(tweenOut)
 
@@ -325,3 +348,5 @@ function buildingAnimation() {
 
 
 }
+
+

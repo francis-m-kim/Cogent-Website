@@ -1,8 +1,17 @@
 class foo{
-  public hello(okay:string){
-    console.log('hi');
+
+  fName : string;
+  lName : string;
+  age : string;
+
+  public setName(name:string){
+      this.lName = name;
   }
+
+
 
 }
 
-meh 
+var bar = new foo;
+bar.setName('Bob');
+console.log(foo);
