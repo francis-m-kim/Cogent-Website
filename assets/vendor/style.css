@@ -71,12 +71,12 @@ h3,
 h4,
 h5,
 h6,
- {
+{
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: #343434;
     font-weight: 600;
     -webkit-font-variant-ligatures: common-ligatures;
-            font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -204,17 +204,17 @@ a:active {
 
 }
 .opacity-7{
-     opacity: 0.7 !important;
+    opacity: 0.7 !important;
 
- }
+}
 .opacity-8{
-      opacity: 0.8 !important;
+    opacity: 0.8 !important;
 
-  }
+}
 .opacity-9{
-       opacity: 0.9 !important;
+    opacity: 0.9 !important;
 
-   }
+}
 
 
 /*buttons */
@@ -955,7 +955,7 @@ a:active {
     position: relative;
 }
 .filtr-container .filtr-item{
-   margin: 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     display: block;
@@ -1071,7 +1071,7 @@ a:active {
 -------------------------------------------------------- */
 
 .team_carousel{
-position: relative;
+    position: relative;
 }
 
 .team_item{
@@ -1343,7 +1343,7 @@ position: relative;
     color: #343434;
 }
 .blog_img{
-overflow: hidden;
+    overflow: hidden;
 }
 .blog_box img{
     width: 100%;
@@ -1355,7 +1355,7 @@ overflow: hidden;
 }
 .blog_box:hover img {
     -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .blog_footer_btn {
@@ -1462,10 +1462,10 @@ overflow: hidden;
 }
 
 .footer_social{
-     list-style: none;
-     width: 100%;
-     padding: 0;
- }
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
 .footer_social li{
     display: inline-block;
     float: none;

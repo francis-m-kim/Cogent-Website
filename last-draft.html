@@ -23,9 +23,9 @@
     <!-- ========== Favicon Ico ========== -->
     <link rel="icon" href="assets/img/cogent-favicon.png">
     <!-- ========== STYLESHEETS ========== -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/vendor/style.css" rel="stylesheet">
     <link href="assets/css/cogent.css" rel="stylesheet">
 
     <!-- ========== JAVASCRIPTS ========== -->
@@ -47,8 +47,9 @@
   </head>
   <body>
     <!-- ========== Header ========== -->
+
     <!-- <div class="header-opacity-layer"></div> -->
-    <div class="navbar header navbar-fixed-top" role="navigation">
+    <div class="navbar header navbar-fixed-top"  role="navigation">
         <div class="container">
             <!-- Navbar-header -->
             <div class="navbar-header">
@@ -88,20 +89,36 @@
         <!-- end container -->
     </div>
 
+
+    <img id="foreground-cloud1" class="foreground" src="assets/img/foreground-cloud1.png"/>
+    <img id="foreground-cloud2" class="foreground" src="assets/img/foreground-cloud2.png"/>
+    <img id="foreground-cloud3" class="foreground" src="assets/img/foreground-cloud3.png"/>
+    <img id="foreground-cloud4" class="foreground" src="assets/img/foreground-cloud4.png"/>
+
+    <div id="cloud-trigger1"></div>
+
+
     <div class="cogent-section" id="home">
+
       <div class="container">
         <img class="clouds moveable-image"
              src="assets/img/clouds1.png" alt="">
         <img class="moveable-image not-mobile" id="hero-blimp"
              src="assets/img/hero-blimp.png">
 
-         <img class="moveable-image for-mobile"
-              src="assets/img/hero-blimp.png">
+        <img class="moveable-image for-mobile"
+             src="assets/img/mobile-hero-blimp.png" id="mobile-hero-blimp">
+
+
+
       </div>
     </div>
 
-    <div class="cogent-spacing" id="home-about"></div>
+    <div class="cogent-spacing" id="home-about">
 
+    </div>
+    <div id="cloud-trigger2"></div>
+    <div id="cloud-trigger3"></div>
     <div class="cogent-section" id="about">
       <div id="trigger-about-in"> </div>
       <div class="container">
@@ -117,7 +134,10 @@
     </div>
 
 
-    <div class="cogent-spacing" id="about-services"></div>
+    <div class="cogent-spacing" id="about-services">
+
+    </div>
+
 
     <div class="cogent-section" id="services">
       <div id="trigger-services-in"> </div>
@@ -136,7 +156,10 @@
       <div id="trigger-services-out"> </div>
     </div>
 
-    <div class="cogent-spacing" id="services-jobs"></div>
+    <div class="cogent-spacing" id="services-jobs">
+
+    </div>
+
 
     <div class="cogent-section" id="jobs">
       <div id="trigger-jobs-in"> </div>
@@ -152,12 +175,15 @@
         </div>
 
         <img class="moveable-image for-mobile"
-             src="assets/img/best-places-to-work-2016.png">
+             src="assets/img/best-places-to-work-2016.png" id="mobile-best-places">
       </div>
       <div id="trigger-jobs-out"> </div>
     </div>
 
-    <div class="cogent-spacing" id="jobs-contact"></div>
+    <div class="cogent-spacing" id="jobs-contact">
+
+    </div>
+    <div id="cloud-trigger4"></div>
 
     <div class="cogent-section" id="contact">
       <div id="trigger-contact-in"> </div>
@@ -199,7 +225,18 @@
       </div>
     </div>
     <img class="building for-mobile" src="assets/img/buildings-front.png" style="margin-top: -50%" alt="">
-    <div class="icon-container">
+    <div class="icon-container not-mobile">
+      <a href="http://www.facebook.com/cogentworld">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="http://www.twitter.com/cogentworld">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="http://www.instagram.com/cogentworld">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="icon-container-mobile for-mobile">
       <a href="http://www.facebook.com/cogentworld">
         <i class="fa fa-facebook" aria-hidden="true"></i>
       </a>

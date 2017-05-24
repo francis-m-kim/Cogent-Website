@@ -1,0 +1,21 @@
+.blimp-container {
+  text-align: center; }
+
+#email-form {
+  color: grey;
+  margin: 0 auto;
+  margin-top: 15%;
+  width: 80%;
+  max-width: 600px; }
+  #email-form input, #email-form textarea, #email-form button {
+    border: 1px solid red;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 10px 5px 0px red; }
+  #email-form button {
+    background: salmon;
+    color: white; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVtYWlsLWZvcm0uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CLEVBQUU7O0FBRXZCO0VBQ0UsWUFBWTtFQUNaLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLGlCQUFpQixFQUFFO0VBQ25CO0lBQ0Usc0JBQXNCO0lBQ3RCLGVBQWU7SUFDZixZQUFZO0lBQ1osYUFBYTtJQUNiLG9CQUFvQjtJQUNwQiw2QkFBNkIsRUFBRTtFQUNqQztJQUNFLG1CQUFtQjtJQUNuQixhQUFhLEVBQUUiLCJmaWxlIjoiZW1haWwtZm9ybS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmxpbXAtY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyOyB9XG5cbiNlbWFpbC1mb3JtIHtcbiAgY29sb3I6IGdyZXk7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBtYXJnaW4tdG9wOiAxNSU7XG4gIHdpZHRoOiA4MCU7XG4gIG1heC13aWR0aDogNjAwcHg7IH1cbiAgI2VtYWlsLWZvcm0gaW5wdXQsICNlbWFpbC1mb3JtIHRleHRhcmVhLCAjZW1haWwtZm9ybSBidXR0b24ge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJlZDtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICB3aWR0aDogMTAwJTtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgICBib3gtc2hhZG93OiAxMHB4IDVweCAwcHggcmVkOyB9XG4gICNlbWFpbC1mb3JtIGJ1dHRvbiB7XG4gICAgYmFja2dyb3VuZDogc2FsbW9uO1xuICAgIGNvbG9yOiB3aGl0ZTsgfVxuIl19 */
