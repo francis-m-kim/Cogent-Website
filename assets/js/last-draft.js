@@ -9,14 +9,13 @@ function wipeOutNonMobile() {
   $('.not-mobile').remove();
   $('.cogent-spacing').remove();
   $('.for-mobile').show();
-  $('.navbar-fixed-top').attr('id','navbar-mobile-fix');
 }
 
 $(document).ready(function() {
   var color = {r:0, g:0, b:0};
   anchorTagScroll();
   mobileMenuButtonHover();
-  //contactButtons();
+  contactButtons();
   chooseGradient(hourNow());
 
   if (isMobile()) {
@@ -25,11 +24,10 @@ $(document).ready(function() {
   } else {
     //cloudControl();
     $("html").niceScroll();
-    // floatHeroBlimp();
+    floatHeroBlimp();
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
-    foregroundClouds();
   }
 })
 
@@ -37,37 +35,6 @@ $(document).ready(function() {
 
 
 
-
-function foregroundClouds(){
-
-    var tween1 = TweenMax.to('#foreground-cloud1',1,{top:'-100%'});
-    var scene1 = new ScrollMagic.Scene({
-        triggerElement: '#cloud-trigger1',
-        offset: 500,
-        duration: '600%'
-    }).setTween(tween1)
-        .addIndicators();
-    controller.addScene(scene1);
-
-    var tween2 = TweenMax.to('#foreground-cloud2',1,{top:'-100%'});
-    var scene2 = new ScrollMagic.Scene({
-        triggerElement: '#cloud-trigger2',
-        offset: 500,
-        duration: '600%'
-    }).setTween(tween2)
-        .addIndicators();
-    controller.addScene(scene2);
-
-    var tween3 = TweenMax.to('#foreground-cloud3',1,{top:'-100%'});
-    var scene3 = new ScrollMagic.Scene({
-        triggerElement: '#cloud-trigger3',
-        offset: 500,
-        duration: '600%'
-    }).setTween(tween3)
-        .addIndicators();
-    controller.addScene(scene3);
-
-}
 
 function anchorTagScroll() {
   var ORDER = ['#home', '#about', '#services', '#jobs', '#contact'];
@@ -118,7 +85,7 @@ function randomize(num, ambit) {
 }
 
 function cloudControl() {
-  var LOOP_TIME = 100000;
+  var LOOP_TIME = 80000;
 
   function move($cloud, amount, time) {
     $cloud.animate({left: amount}, time, "linear", function() {
@@ -162,7 +129,7 @@ function chooseGradient(hour) {
     afternoon: [
       { r: 0, g: 81, b: 136 },
       { r: 95, g: 197, b: 244 },
-      { r: 50, g: 120, b: 200 }
+      { r: 205, g: 178, b: 143 }
     ],
     evening: [
       { r: 87, g: 56, b: 53 },
@@ -205,7 +172,7 @@ function setBackground(gradient) {
 
 function floatHeroBlimp() {
   var radians = 0;
-  var multiplier = .333; //the NUMBER OF THE BEAST
+  var multiplier = .666; //the NUMBER OF THE BEAST
   (function moveRandom() {
     var moveAmount = "-=" + Math.cos(radians) * multiplier + "%";
     $('#hero-blimp').animate({top: moveAmount}, 100, function() {
@@ -216,12 +183,8 @@ function floatHeroBlimp() {
 }
 
 function sectionAnimations() {
-    var aboutServicesDuration = window.innerHeight * (5/6);
-    var aboutServicesOffset = aboutServicesDuration * (7/4);
-
-
-    SECTIONS = ["about", "services", "contact"]
-    ANIMPARAMS = {
+  SECTIONS = ["about", "services", "contact"]
+  ANIMPARAMS = {
     "#about-image": {
       in: {
         bezier: {
@@ -251,27 +214,21 @@ function sectionAnimations() {
         },
         ease:Power1.easeInOut
       },
-      duration: aboutServicesDuration,
-      offset: aboutServicesOffset
+      duration: 400
     },
     "#services-image": {
       in: {left: "-50%"},
       out: {left: "150%"},
-      duration: aboutServicesDuration,
-        offset: aboutServicesDuration * (5/4),
+      duration: 300,
       ease:Power3.easeInOut
     },
     "#contact-image": {
-      in: {top: "100%"},
-      offset: aboutServicesDuration * (5/4),
-      duration: aboutServicesDuration * (4/5),
-      ease: Sine.easeOut
+      in: {opacity:0, top: "250%"},
+      offset: 100,
+      duration: 300,
+      ease: SlowMo.ease.config(0.3, 0.7, false)
     }
   }
-  // console.log(ANIMPARAMS);
-
-
-
 
   controller = new ScrollMagic.Controller();
 
@@ -287,7 +244,7 @@ function sectionAnimations() {
 
     var sceneOut = new ScrollMagic.Scene({
       triggerElement: "#trigger-" + section + "-out",
-      offset: ANIMPARAMS[imageID].offset,
+      offset: 1000,
       duration: ANIMPARAMS[imageID].duration
     }).setTween(tweenOut)
 
@@ -316,21 +273,21 @@ function bestPlaceAnimation() {
 
 
 function buildingAnimation() {
-  var tweenContainer = TweenMax.from('.building-container', .1, {opacity: 1, top: '1000px'})
+  var tweenContainer = TweenMax.from('.building-container', .1, {opacity: 0, top: '200px'})
   var sceneContainer = new ScrollMagic.Scene({
     triggerElement: "#trigger-footer-in",
     offset: 0,
-    duration: 400,
+    duration: 100,
     ease: Power4.easeIn
   }).setTween(tweenContainer);
   controller.addScene([sceneContainer]);
 
   var buildings = ["#front", "#mid", "#back"];
   buildings.forEach(function(building, idx) {
-    var tweenBuilding = TweenMax.from(building, .1, {top: (-14 * idx) + "vh"});
+    var tweenBuilding = TweenMax.from(building, .1, {top: (-6 * idx) + "vh"});
     var sceneBuilding = new ScrollMagic.Scene({
       triggerElement: "#trigger-footer-in",
-      offset: 250,
+      offset: 200,
       duration: 200,
       ease: Bounce.easeInOut
     }).setTween(tweenBuilding);
@@ -340,7 +297,7 @@ function buildingAnimation() {
   var tweenIcons = TweenMax.from('.icon-container', .1, {opacity: 0})
   var sceneIcons = new ScrollMagic.Scene({
     triggerElement: "#trigger-footer-in",
-    offset: 300,
+    offset: 0,
     duration: 100,
     ease: Power1.easeIn
   }).setTween(tweenIcons);
@@ -348,5 +305,3 @@ function buildingAnimation() {
 
 
 }
-
-

@@ -1,0 +1,43 @@
+
+.cogent-letters {
+  transition: all .6s;
+  filter: brightness(0) invert(100%);
+
+}
+
+.header .navbar-nav li a {
+  @media (max-width: 768px) {
+    padding: .5em 1em;
+
+  }
+}
+
+.navbar-nav {
+  margin: 0em -15px;
+}
+.nav>li.navbar-separator{
+  margin-left: -20px;
+  margin-right: -20px;
+  @media (max-width: 768px) {
+    display:none;
+  }
+}
+.navbar-collapse {
+  border-top: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.mobile_menu_btn {
+  transition: all .4s ease-in-out;
+}
+.mobile_menu_btn span{
+  transition: all .4s ease-in-out;
+}
+.mobile_menu_btn:hover{
+  border: 1px solid #b82025;
+}
+.mobile_menu_btn span.hovered{
+  background-color: #b82025;
+}

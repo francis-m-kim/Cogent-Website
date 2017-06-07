@@ -1,0 +1,185 @@
+@import 'constants';
+@import 'forms';
+@import 'navbar';
+html {
+  width: 100vw;
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  color: white;
+}
+
+$bottom-spacing: .5em;
+$section-top-margins: -35px;
+$pushdown-height: 390px;
+
+.col-xs-12 {
+  padding: 0 25px;
+}
+
+@mixin bottom-spacing {
+  margin-bottom: $bottom-spacing;
+}
+
+@mixin loud {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1em;
+  margin-bottom: $bottom-spacing;
+}
+
+@mixin medium {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1em;
+  margin-bottom: $bottom-spacing;
+}
+
+@mixin bold {
+  font-size: 16px;
+  font-weight: 500;
+}
+@mixin normal {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.cloud1 {
+  left: 75%;
+  top: 50%;
+  z-index: -20;
+}
+.cloud2 {
+  left: 25%;
+  top: 107%;
+  z-index: -20;
+}
+
+.push-down {
+  height: $pushdown-height;
+}
+
+.form-intro {
+  color: white;
+  @include loud;
+  margin-bottom: $bottom-spacing * 2;
+}
+
+.underlay-container {
+  position: relative;
+}
+
+.underlay {
+  z-index: -10;
+  position: absolute;
+  width: 300vw;
+  height: 100vh;
+  left: -50vw;
+  top: $section-top-margins;
+  background: #004a80;
+
+}
+
+// WATCH OUT FOR MAGIC NUMBERS!
+@media screen and (max-width: 768px) {
+  .underlay, .push-down, .cloud2 {
+    display: none;
+  }
+}
+
+
+.about-section {
+  position: relative;
+  .about-intro {
+    @include loud;
+  }
+  .about-medium {
+    @include medium;
+  }
+  .about-bold {
+    @include bold;
+  }
+  .about-normal {
+    @include normal;
+  }
+  margin-bottom: $bottom-spacing * 2;
+}
+
+.carousel-background {
+  background: #0072bc;
+  #pad-top {
+    padding-top: $section-top-margins;
+  }
+}
+.carousel-text-section {
+  padding-top: 35px;
+  .carousel-text-medium {
+    @include medium;
+  }
+  .carousel-text-bold {
+    @include bold;
+  }
+  .carousel-text-normal {
+    @include normal;
+  }
+  margin-bottom: $bottom-spacing * 3;
+}
+
+.owl-carousel {
+  margin-bottom: -($section-top-margins);
+}
+
+
+
+.buildings {
+  position: relative;
+  height: 60vh;
+  img {
+    position: absolute;
+    width: 100%;
+    min-width: 800px;
+    max-height: 525px;
+    bottom: 0;
+    @include horizontal-centered;
+  }
+  #back {
+    z-index: 1;
+  }
+  #mid {
+    z-index: 2;
+  }
+  #front {
+    z-index: 3;
+  }
+}
+
+.bottom-bar {
+  position: relative;
+  img {
+    width: 100%;
+    height: 50px;
+  }
+  .icons {
+    position: absolute;
+    @include centered;
+    font-size: 20px;
+    color: white;
+    a {
+      color: white;
+      &:hover {
+        i{
+          transform: scale(1.2);
+        }
+      }
+    }
+    a:nth-child(2) {
+      padding: 0 20px !important;
+    }
+  }
+}
+
+#form {
+  margin-top: $bottom-spacing;
+  @include normal;
+}
