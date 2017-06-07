@@ -346,12 +346,12 @@ function sectionAnimations() {
       ease:Power3.easeInOut
     },
     "#services-image": {
-      in: {left: "-50%"},
-      out: {left: "150%"},
-      duration: aboutServicesDuration,
-        offset: aboutServicesDuration,
-      ease:Power3.easeInOut
-    },
+         in: {left: "-50%"},
+         out: {left: "150%"},
+         duration: aboutServicesDuration * .65,
+           offset: aboutServicesDuration * .597,
+         ease:Power3.easeInOut
+       },
     "#contact-image": {
       in: {top: "100%"},
       offset: aboutServicesDuration * (5/4),

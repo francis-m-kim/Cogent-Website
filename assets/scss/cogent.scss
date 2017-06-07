@@ -231,6 +231,13 @@ html, body {
   }
 }
 
+// reduced spacing between services and places to work,
+// if we need to add another section add height to 100
+.cogent-spacing.hide-space{
+   &#services-jobs{
+     height: 25vh;
+  }
+}
 
 
 
