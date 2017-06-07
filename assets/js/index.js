@@ -341,8 +341,8 @@ function sectionAnimations() {
       out: {
         left: "-50%"
       },
-      duration: aboutServicesDuration * 2 / 3,
-      offset: aboutServicesOffset * 2 / 3,
+      duration: aboutServicesDuration * .50,
+      offset: aboutServicesOffset * .50,
       ease:Power3.easeInOut
     },
     "#services-image": {
@@ -385,18 +385,34 @@ function sectionAnimations() {
 function bestPlaceAnimation() {
   var tweenIn = TweenMax.staggerFrom('.bestplace', .1, {opacity: 0, marginTop: '5%'}, .2)
   var sceneIn = new ScrollMagic.Scene({
-    triggerElement: "#trigger-jobs-in",
+    triggerElement: "#trigger-jobs-out",
     duration: 300
   }).setTween(tweenIn);
 
-  var jobsImage = document.querySelector('#jobs-image')
-  var tweenOut = TweenMax.to(jobsImage, 1, {opacity: 0, scale: 1.5});
-  var sceneOut = new ScrollMagic.Scene({
-    triggerElement: "#trigger-jobs-out",
-    offset: 600,
-    duration: 250
-  }).setTween(tweenOut);
-  controller.addScene([sceneIn, sceneOut]);
+  // var upAnimation = newTimelineMax()
+  //   .to(".move-up", .1, {y: "75"})
+
+  var sceneUp = new ScrollMagic.Scene({
+    triggerElement: ".move-up",
+    duration: "500", // measures how many pixels , animations is going to take
+  }).setPin(".move-up")
+    // .setTween(upAnimation)
+    .addIndicators()
+      .addTo(controller)
+
+
+      // THIS WAS THE ORIGINAL CODE
+      
+  //var jobsImage = document.querySelector('#jobs-image')
+
+  // var tweenOut = TweenMax.to(jobsImage, 1, {opacity: 0, scale: 1.5});
+  // var sceneOut = new ScrollMagic.Scene({
+  //   triggerElement: "#trigger-jobs-out",
+  //   offset: 600,
+  //   duration: 250
+  // }).setTween(tweenOut);
+
+  controller.addScene([sceneIn, sceneUp]);
 }
 
 
