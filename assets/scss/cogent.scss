@@ -23,16 +23,13 @@ $large-font-size: 45px;
 .balloon{
   position: absolute;
   width: 12%;
-  @media screen and (max-width: 800px){
-    width: 30%;
-  }
-  // min-width: 200px;
+  min-width: 100px;
   &#balloon1{
-    top: 5%;
-    left: 14%;
+    top: 15%;
+    right: 72%;
   }
   &#balloon2{
-    top: -12% ;
+    top: -2% ;
     left: 25%;
   }
   &#balloon3{
@@ -103,8 +100,9 @@ html, body {
   }
   .icons {
     position: absolute;
+    width: 16.5em;
     @include centered;
-    font-size: 20px;
+    font-size: 14px;
     color: white;
     a {
       color: white;
@@ -224,7 +222,7 @@ html, body {
     height:80vh;
   }
   &#services-jobs{
-    height: 100vh;
+    height: 33vh;
   }
   &#jobs-contact{
     height: 50vh;

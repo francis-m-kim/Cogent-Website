@@ -148,35 +148,37 @@ function chooseGradient(hour) {
   var gradient;
   var GRADIENTS = {
     morning: [
-      { r: 128, g: 56, b: 96 },
-      { r: 240, g: 150, b: 124 },
-      { r: 133, g: 166, b: 180 }
+      { r: 49, g: 53, b: 95 },
+      { r: 160, g: 84, b: 107 },
+      { r: 237, g: 116, b: 55 }
     ],
     afternoon: [
-      { r: 0, g: 81, b: 136 },
-      { r: 95, g: 197, b: 244 },
-      { r: 50, g: 120, b: 200 }
+      { r: 1, g: 81, b: 137 },
+      { r: 55, g: 142, b: 194 },
+      { r: 95, g: 197, b: 243 }
     ],
     evening: [
-      { r: 87, g: 56, b: 53 },
-      { r: 197, g: 90, b: 52 },
-      { r: 242, g: 165, b: 57 }
+      { r: 36, g: 19, b: 53 },
+      { r: 155, g: 45, b: 75 },
+      { r: 230, g: 130, b: 75 }
     ],
     night: [
-      { r: 39, g: 26, b: 54 },
-      { r: 9, g: 39, b: 58 },
-      { r: 102, g: 118, b: 142 }
+      { r: 39, g: 19, b: 54 },
+      { r: 10, g: 10, b: 50 },
+      { r: 30, g: 30, b: 50 }
     ]
   }
 
   if (hour < 6) {
     gradient = GRADIENTS.night;
-  } else if (hour < 12){
+  } else if (hour < 9){
     gradient = GRADIENTS.morning;
   } else if (hour < 18){
     gradient = GRADIENTS.afternoon;
-  } else {
+  } else if (hour < 21){
     gradient = GRADIENTS.evening;
+  } else {
+    gradient = gradient = GRADIENTS.night;
   }
   setBackground(gradient);
 }

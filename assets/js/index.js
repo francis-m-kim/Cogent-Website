@@ -17,13 +17,12 @@ $(document).ready(function() {
   chooseGradient(hourNow());
   anchorTagScroll();
   if (isMobile()) {
-    //randomizeMobileClouds();
     wipeOutNonMobile();
   } else {
-    // cloudControl();
+    cloudControl();
     $("html").niceScroll();
 
-    // floatHeroBlimp();
+    floatHeroBlimp();
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
@@ -186,9 +185,9 @@ function chooseGradient(hour) {
   var gradient;
   var GRADIENTS = {
     morning: [
-      { r: 235, g: 164, b: 62 },
-      { r: 240, g: 151, b: 126 },
-      { r: 113, g: 125, b: 145 }
+      { r: 49, g: 53, b: 95 },
+      { r: 160, g: 84, b: 107 },
+      { r: 237, g: 116, b: 55 }
     ],
     afternoon: [
       { r: 1, g: 81, b: 137 },
@@ -196,25 +195,27 @@ function chooseGradient(hour) {
       { r: 95, g: 197, b: 243 }
     ],
     evening: [
-      { r: 86, g: 56, b: 53 },
-      { r: 214, g: 96, b: 49 },
-      { r: 241, g: 158, b: 56 }
+      { r: 36, g: 19, b: 53 },
+      { r: 155, g: 45, b: 75 },
+      { r: 230, g: 130, b: 75 }
     ],
     night: [
-      { r: 39, g: 26, b: 54 },
-      { r: 9, g: 39, b: 58 },
-      { r: 30, g: 47, b: 50 }
+      { r: 39, g: 19, b: 54 },
+      { r: 10, g: 10, b: 50 },
+      { r: 30, g: 30, b: 50 }
     ]
   }
 
   if (hour < 6) {
     gradient = GRADIENTS.night;
-  } else if (hour < 12){
+  } else if (hour < 9){
     gradient = GRADIENTS.morning;
   } else if (hour < 18){
     gradient = GRADIENTS.afternoon;
-  } else {
+  } else if (hour < 21){
     gradient = GRADIENTS.evening;
+  } else {
+    gradient = gradient = GRADIENTS.night;
   }
   setBackground(gradient);
 }
@@ -339,18 +340,18 @@ function sectionAnimations() {
         left: "150%"
       },
       out: {
-        left: "-50%"
+        left: "-54%"
       },
       duration: aboutServicesDuration * .50,
       offset: aboutServicesOffset * .50,
-      ease:Power3.easeInOut
+      ease: SlowMo.ease.config(0.3, 0.7, false)
     },
     "#services-image": {
          in: {left: "-50%"},
          out: {left: "150%"},
          duration: aboutServicesDuration * .65,
-           offset: aboutServicesDuration * .597,
-         ease:Power3.easeInOut
+         offset: aboutServicesDuration * .597,
+         ease:Power0.easeInOut
        },
     "#contact-image": {
       in: {top: "100%"},
@@ -386,33 +387,36 @@ function bestPlaceAnimation() {
   var tweenIn = TweenMax.staggerFrom('.bestplace', .1, {opacity: 0, marginTop: '5%'}, .2)
   var sceneIn = new ScrollMagic.Scene({
     triggerElement: "#trigger-jobs-out",
+    offset: 0,
     duration: 300
   }).setTween(tweenIn);
+
+  var jobsImage = document.querySelector('#jobs-image')
+
+  var tweenOut = TweenMax.to(jobsImage, 1, {position: 'absolute'});
+  var sceneOut = new ScrollMagic.Scene({
+    triggerElement: "#trigger-jobs-out",
+    offset: 0,
+    duration: 10
+  }).setTween(tweenOut);
 
   // var upAnimation = newTimelineMax()
   //   .to(".move-up", .1, {y: "75"})
 
-  var sceneUp = new ScrollMagic.Scene({
-    triggerElement: ".move-up",
-    duration: "500", // measures how many pixels , animations is going to take
-  }).setPin(".move-up")
-    // .setTween(upAnimation)
-    .addIndicators()
-      .addTo(controller)
+  // var sceneUp = new ScrollMagic.Scene({
+  //   triggerElement: ".move-up",
+  //   duration: "500", // measures how many pixels , animations is going to take
+  // }).setPin(".move-up")
+  //   // .setTween(upAnimation)
+  //   .addIndicators()
+  //     .addTo(controller)
 
 
       // THIS WAS THE ORIGINAL CODE
-      
-  //var jobsImage = document.querySelector('#jobs-image')
 
-  // var tweenOut = TweenMax.to(jobsImage, 1, {opacity: 0, scale: 1.5});
-  // var sceneOut = new ScrollMagic.Scene({
-  //   triggerElement: "#trigger-jobs-out",
-  //   offset: 600,
-  //   duration: 250
-  // }).setTween(tweenOut);
 
-  controller.addScene([sceneIn, sceneUp]);
+
+  controller.addScene([sceneIn, sceneOut]);
 }
 
 
