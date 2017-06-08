@@ -1,0 +1,27 @@
+$cogent-red: #b82025;
+$darker-red: #9a191e;
+$lighter-red: #f0272d;
+$margin-size: 14px;
+$font-size: 16px;
+$max-width: 600px;
+
+$input-height: 40px;
+$textarea-height: $input-height * 4;
+
+.for-mobile {
+  display: none;
+}
+
+@mixin vertical-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin horizontal-centered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

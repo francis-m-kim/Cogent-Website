@@ -1,0 +1,108 @@
+@import 'constants';
+
+#form {
+  color: black;
+  input, textarea, button {
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    padding: .5em;
+    border: 1px;
+    border-color: transparent;
+    &:focus {
+      outline: 0;
+    }
+  }
+  input, button {
+    height: $input-height;
+  }
+  textarea {
+    height: $textarea-height;
+    resize: none;
+  }
+  button {
+    label {
+      cursor: pointer;
+    }
+    background: $cogent-red;
+    color: white;
+  }
+  #submit {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  #upload {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .make3d-input {
+    #file {
+      display:none;
+    }
+    .bottom, .right, .right2 {
+      position: relative;
+    }
+    .bottom {
+      background: $darker-red;
+      z-index: -1;
+      transform: skew(45deg);
+      height: $input-height/4;
+      left: $input-height/8;
+    }
+    .right {
+      z-index: -2;
+      background: $lighter-red;
+      height: $input-height;
+      top: -($input-height);
+      left: $input-height/4;
+    }
+
+    .right2 {
+      z-index: -3;
+      background: $lighter-red;
+      height: $input-height/4;
+      left: $input-height/8;
+      transform: skew(45deg);
+      top: -($input-height * 9 / 4);
+
+    }
+  }
+  .after-input {
+    margin-top: -($input-height * 3 / 4);
+  }
+
+  .make3d-textarea {
+    .bottom, .right, .right2 {
+      position: relative;
+    }
+    .bottom {
+      background: $darker-red;
+      z-index: -1;
+      transform: skew(45deg);
+      height: $input-height/4;
+      left: $input-height/8;
+    }
+    .right {
+      z-index: -2;
+      background: $lighter-red;
+      height: $textarea-height;
+      top: -($textarea-height);
+      left: $input-height/4;
+    }
+
+    .right2 {
+      z-index: -3;
+      background: $lighter-red;
+      height: $input-height/4;
+      left: $input-height/8;
+      transform: skew(45deg);
+      top: -($textarea-height * 2) - ($input-height / 4);
+
+    }
+  }
+  .after-textarea {
+    margin-top: -($textarea-height) + $input-height/4;
+  }
+}

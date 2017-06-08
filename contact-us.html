@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Francis Kim">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- ========== Favicon Ico ========== -->
+    <link rel="icon" href="assets/img/cogent-favicon.png">
+    <!-- ========== STYLESHEETS ========== -->
+    <link href="assets/vendor/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="assets/vendor/style.css" rel="stylesheet">
+    <link href="assets/css/contact-pages.css" rel="stylesheet">
+
+    <!-- ========== JAVASCRIPTS ========== -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- GSAP -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <!-- ScrollMagic -->
+    <script src="assets/js/ScrollMagic.min.js"></script>
+    <script src="assets/js/debug.addIndicators.min.js"></script>
+    <script src="assets/js/animation.gsap.min.js"></script>
+    <script src="assets/js/animation.velocity.min.js"></script>
+    <script src="assets/js/jquery.ScrollMagic.min.js"></script>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script src="assets/js/nicescroll.min.js"></script>
+
+    <script src="assets/js/contact-us.js"></script>
+</head>
+<body>
+  <div class="navbar header navbar-fixed-top"  role="navigation">
+      <div class="container">
+          <!-- Navbar-header -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <!-- LOGO -->
+              <a class="navbar-brand logo" href="index.html">
+                  <img class="img-responsive cogent-letters" src="assets/img/cogent-letters.png" style="width:150px;">
+              </a>
+          </div>
+          <!-- end navbar-header -->
+
+          <!-- menu -->
+          <div class="navbar-collapse collapse" id="data-scroll">
+            <ul class="nav navbar-nav navbar-right">
+
+              <!-- <li> <a href="/the-cogent-argument.html">ABOUT</a> </li>
+              <li class="navbar-separator"> <a href="#">|</a> </li> -->
+
+              <li> <a href="/join-cogent.html">JOBS</a> </li>
+              <li class="navbar-separator"> <a href="#">|</a> </li>
+
+              <li> <a href="/contact-us.html">CONTACT</a> </li>
+            </ul>
+          </div>
+          <!--/Menu -->
+      </div>
+      <!-- end container -->
+  </div>
+    <!--<img class="clouds moveable-image"-->
+         <!--src="assets/img/clouds2.png" alt="">-->
+    <img class="clouds first"
+        src="assets/img/clouds1.png" alt="">
+    <img class="clouds second"
+        src="assets/img/clouds2.png" alt="">
+
+    <div id="content">
+      <div class="blimp-container">
+          <a href="index.html"><img class="blimp" src="assets/img/mobile-hero-blimp.png"></a>
+      </div>
+
+      <form action="send-email.php" method="post" id="contact-us-form">
+        <input type="hidden" name="form-name" value="contact-us">
+        <div class="col-xs-12" id="form">
+
+          <div class="make3d-input">
+            <input id="name" name="name" type="text" placeholder="Name">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-input">
+            <input id="email" name="email" type="text" placeholder="Email">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-textarea">
+            <textarea name="textarea" id="textarea" placeholder="What can we help you with?"></textarea>
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-textarea make3d-input" id="submit">
+            <button type="button"> SUBMIT </button>
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+
+</body>
+</html>

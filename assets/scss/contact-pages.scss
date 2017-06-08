@@ -1,0 +1,53 @@
+@import 'constants';
+@import 'forms';
+@import 'navbar';
+
+
+html{
+  min-height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+button {
+  border: 0;
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+
+#content {
+  .blimp-container {
+    text-align: center;
+    margin: ($input-height * 3 / 4) 0;
+
+    .blimp {
+      width: 50%;
+      max-width: $max-width;
+      height: auto;
+    }
+  }
+  font-size: $font-size;
+  color: black;
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+.clouds {
+  z-index: -10;
+  position: fixed;
+  width: 70%;
+  &.first{
+    top: 60%;
+    left: 50%;
+  }
+  &.second{
+
+  }
+
+}
