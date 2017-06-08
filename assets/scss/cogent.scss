@@ -55,6 +55,13 @@ html, body {
   // background-image: linear-gradient(#03548b, #5fc5f4, #b8b6a1);
 }
 
+.moveable-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  @include centered;
+}
+
 
 #trigger-footer-in {
   position: relative;
@@ -80,6 +87,9 @@ html, body {
     max-height: 600px;
     bottom: 0;
     @include horizontal-centered;
+  }
+  #stripe {
+    z-index: 0;
   }
   #back {
     z-index: 1;
@@ -118,38 +128,13 @@ html, body {
   }
 }
 
-
-
-
-
-
 .foreground{
   position: fixed;
   z-index: -1;
-
+  width: 100%;
+  max-width: 1000px;
+  min-width: 600px;
 }
-
-
-//#cloud-trigger1{
-//
-//}
-//
-//#cloud-trigger1{
-//
-//}
-//
-//#cloud-trigger1{
-//
-//}
-//
-//#cloud-trigger1{
-//
-//}
-//
-//#cloud-trigger1{
-//
-//}
-
 
 #foreground-cloud1{
   right: -3%;
@@ -157,17 +142,25 @@ html, body {
 }
 #foreground-cloud2{
   top:100%;
-
 }
 #foreground-cloud3{
   top:900%;
-
 }
 #foreground-cloud4{
-
   top:100%;
-
 }
+
+.clouds {
+  z-index: -2;
+  position: absolute;
+  width: 75%;
+  max-width: 750px;
+  height: auto;
+  &#cloud1{
+    left:25%;
+  }
+}
+
 
 
 
@@ -180,19 +173,6 @@ html, body {
   opacity: .9;
   background: lightblue;
 }
-
-
-.clouds {
-  z-index: -2;
-  position: absolute;
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  &#cloud1{
-    left:25%;
-  }
-}
-
 
 #hero-blimp {
   width: 100%;
@@ -273,13 +253,6 @@ html, body {
 
 .for-mobile {
   display: none;
-}
-
-.moveable-image {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  @include centered;
 }
 
 

@@ -16,7 +16,7 @@
     case 'the-cogent-argument':
       $info = "";
       foreach($_POST as $key=>$value) {
-        if ($key == "textarea" || $key == "form-name" {
+        if ($key == "textarea" || $key == "form-name") {
           continue;
         }
         $line = $key . ": " . $value . "\n";

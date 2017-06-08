@@ -20,9 +20,9 @@ $(document).ready(function() {
     wipeOutNonMobile();
   } else {
     cloudControl();
+    // floatHeroBlimp();
     $("html").niceScroll();
 
-    floatHeroBlimp();
     sectionAnimations();
     bestPlaceAnimation();
     buildingAnimation();
@@ -342,8 +342,8 @@ function sectionAnimations() {
       out: {
         left: "-54%"
       },
-      duration: aboutServicesDuration * .50,
-      offset: aboutServicesOffset * .50,
+      duration: aboutServicesDuration * .65,
+      offset: aboutServicesOffset * .597,
       ease: SlowMo.ease.config(0.3, 0.7, false)
     },
     "#services-image": {
@@ -351,7 +351,7 @@ function sectionAnimations() {
          out: {left: "150%"},
          duration: aboutServicesDuration * .65,
          offset: aboutServicesDuration * .597,
-         ease:Power0.easeInOut
+         ease:Power3.easeInOut
        },
     "#contact-image": {
       in: {top: "100%"},
