@@ -50,8 +50,9 @@
   		$error = 'Mail error: '.$mail->ErrorInfo;
   		return false;
   	} else {
-  		$error = 'Message sent!';
-  		return true;
+  		//$error = 'Message sent!';
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
+  		//return true;
   	}
   }
 
