@@ -27,7 +27,7 @@
       break;
   }
 
-  smtpmailer('bashir@cogentworld.com', $_POST['email'], $_POST['name'], $subject, $_POST['textarea'], $_FILES);
+  smtpmailer('jobs@cogentworld.com', $_POST['email'], $_POST['name'], $subject, $_POST['textarea'], $_FILES);
 
   function smtpmailer($to, $from, $from_name, $subject, $body, $file) {
   	global $error;
@@ -38,8 +38,8 @@
   	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
   	$mail->Host = 'smtp.gmail.com';
   	$mail->Port = 465;
-  	$mail->Username = 'bashir@cogentworld.com';
-  	$mail->Password = 'Platinum1!';
+  	$mail->Username = 'jobs@cogentworld.com';
+  	$mail->Password = 'cogentworld';
   	$mail->SetFrom($from, $from_name);
   	$mail->Subject = $subject;
   	$mail->Body = $body;
