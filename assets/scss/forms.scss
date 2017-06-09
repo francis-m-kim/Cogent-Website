@@ -1,7 +1,82 @@
 @import 'constants';
 
+
+
 #form {
+  margin-top: 30px;
   color: black;
+
+  .loud, .soft, .choose-category {
+    color: white;
+  }
+
+  .loud {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 9px;
+  }
+  .soft {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 9px
+  }
+
+  .choose-category {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    #choose-influencer, #choose-agency {
+      background: rgba(255,255,255,0.8);
+      position: relative;
+      padding: 4px 2px;
+    }
+    #choose-influencer {
+      color: $lighter-red;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 1px;
+        left: 0;
+        background-color: $lighter-red;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+    #choose-agency {
+      color: $lighter-blue;
+      margin-right: 2px;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 1px;
+        left: 0;
+        background-color: $lighter-blue;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+
   input, textarea, button {
     border-radius: 0;
     display: block;
@@ -16,6 +91,12 @@
   input, button {
     height: $input-height;
   }
+
+  input.empty {
+    font-family: FontAwesome;
+    font-size: 24px;
+  }
+
   textarea {
     height: $textarea-height;
     resize: none;
@@ -26,6 +107,9 @@
     }
     background: $cogent-red;
     color: white;
+    &.blue {
+      background: #1E60B1;
+    }
   }
   #submit {
     cursor: pointer;
@@ -58,7 +142,6 @@
       top: -($input-height);
       left: $input-height/4;
     }
-
     .right2 {
       z-index: -3;
       background: $lighter-red;
@@ -66,7 +149,17 @@
       left: $input-height/8;
       transform: skew(45deg);
       top: -($input-height * 9 / 4);
+    }
 
+    &.red {
+      .bottom { background: $darker-red }
+      .right { background: $lighter-red }
+      .right2 { background: $lighter-red }
+    }
+    &.blue {
+      .bottom { background: $darker-blue }
+      .right { background: $lighter-blue }
+      .right2 { background: $lighter-blue }
     }
   }
   .after-input {
