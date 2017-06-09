@@ -6,6 +6,10 @@ $large-font-size: 45px;
 
 
 
+.bestplace{
+  width: 110% !important;
+}
+
 .kites{
   position: fixed;
   width: 15%;
@@ -137,11 +141,11 @@ html, body {
 }
 
 #foreground-cloud1{
-  right: -3%;
-  top: 45%;
+    top:100%;
 }
 #foreground-cloud2{
-  top:100%;
+  @include centered;
+  max-width: 1450px;
 }
 #foreground-cloud3{
   top:900%;

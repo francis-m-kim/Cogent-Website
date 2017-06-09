@@ -20,7 +20,7 @@ $(document).ready(function() {
     wipeOutNonMobile();
   } else {
     cloudControl();
-    // floatHeroBlimp();
+    floatHeroBlimp();
     $("html").niceScroll();
 
     sectionAnimations();
@@ -83,15 +83,15 @@ function releaseKites() {
 
 function foregroundClouds(){
 
-    var tween1 = TweenMax.to('#foreground-cloud1',1,{top:'-100%'});
+    var tween1 = TweenMax.to('#foreground-cloud2',1,{top:'-90%'});
     var scene1 = new ScrollMagic.Scene({
         triggerElement: '#cloud-trigger1',
-        offset: 0,
+        offset: 300,
         duration: '600%'
     }).setTween(tween1);
     controller.addScene(scene1);
 
-    var tween2 = TweenMax.to('#foreground-cloud2',1,{top:'-100%'});
+    var tween2 = TweenMax.to('#foreground-cloud1',1,{top:'-100%'});
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#cloud-trigger2',
         offset: 500,
@@ -349,7 +349,7 @@ function sectionAnimations() {
     "#services-image": {
          in: {left: "-50%"},
          out: {left: "150%"},
-         duration: aboutServicesDuration * .65,
+         duration: aboutServicesDuration * .60,
          offset: aboutServicesDuration * .597,
          ease:Power3.easeInOut
        },
