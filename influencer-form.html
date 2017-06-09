@@ -31,7 +31,7 @@
     <script src="assets/js/dropzone.min.js"></script>
 
     <script src="assets/js/contact-pages.js"></script>
-    <script src="assets/js/join-cogent.js"></script>
+    <script src="assets/js/influencer-form.js"></script>
 </head>
 <body>
 
@@ -79,48 +79,88 @@
           <a href="index.html"><img class="blimp" src="assets/img/mobile-hero-blimp.png"></a>
       </div>
 
+
+
       <form action="send-email.php" method="post" enctype="multipart/form-data" id="join-cogent-form">
         <input type="hidden" name="form-name" value="join-cogent">
         <div class="col-xs-12" id="form">
+          <div class="loud">
+            Influencer Form
+          </div>
+
+          <div class="soft">
+            Please submit your info to be included in our influencer database!
+          </div>
+          <div class="choose-category">
+            Are you an <span id="choose-influencer">influencer</span> or an <span id="choose-agency">agency</span>?
+          </div>
+
+
 
           <div class="make3d-input">
-            <input id="name" type="text" name="name" placeholder="Name">
+            <input id="name" name="name" type="text" placeholder="Name">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
           <div class="after-input make3d-input">
-            <input id="email" type="text" name="email" placeholder="Email">
+            <input id="email" name="email" type="text" placeholder="Email">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
           <div class="after-input make3d-input">
-            <input id="field" name="field" type="text"  placeholder="Field">
+            <input class="icon-holder empty" id="instagram" name="instagram" type="text" placeholder="&#xf16d;" style="font-family:Arial, FontAwesome" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
-          <div class="after-input make3d-input" id="upload">
-
-            <input type="file" id="file" name="file">
-            <button type="button"> <label id="file-label" for="file">Upload Resume/Portfolio</label> </button>
+          <div class="after-input make3d-input">
+            <input class="icon-holder empty" id="facebook" name="facebook" type="text" placeholder="&#xf082;" style="font-family: Arial, FontAwesome" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
-          <div class="after-input make3d-textarea">
-            <textarea name="textarea" id="textarea" placeholder="Why Cogent?"></textarea>
+          <div class="after-input make3d-input">
+            <input class="icon-holder empty" id="youtube" name="youtube" type="text" placeholder="&#xf167;" style="font-family: Arial, FontAwesome" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
-          <div class="after-textarea make3d-input" id="submit">
+          <div class="after-input make3d-input">
+            <input class="icon-holder empty" id="twitter" name="twitter" type="text" placeholder="&#xf099;" style="font-family: Arial, FontAwesome" autocomplete="off">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-input">
+            <input id="mgmtName" name="mgmtName" type="text" placeholder="Management Contact Name">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-input">
+            <input id="mgmtEmail" name="mgmtEmail" type="text" placeholder="Management Contact Email">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-input">
+            <input id="mgmtPhone" name="mgmtPhone" type="text" placeholder="Management Contact Phone">
+            <div class="bottom"></div>
+            <div class="right"></div>
+            <div class="right2"></div>
+          </div>
+
+          <div class="after-input make3d-input" id="submit">
             <button type="button"> SUBMIT </button>
             <div class="bottom"></div>
             <div class="right"></div>
