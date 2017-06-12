@@ -1,7 +1,13 @@
 
 .cogent-letters {
+  position: relative;
+  width: 130px;
   transition: all .6s;
   filter: brightness(0) invert(100%);
+  @media (max-width: 768px) {
+    margin-bottom: -35px;
+    top: -10px;
+  }
 
 }
 
