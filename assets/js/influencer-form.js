@@ -2,29 +2,51 @@ $(document).ready(function() {
   submitHandler();
   iconPlaceholders();
   categoryHandler();
+  animateButtons();
 
 
   ////////////////////////////////////////////////////////
+
+  function animateButtons() {
+    $('button').click(function() {
+      var parent = $(this).parent();
+      parent.animate({
+        top: "+=5px",
+        left: "+=5px"
+      }, 120).animate({
+        top: "-=5px",
+        left: "-=5px"
+      }, 150)
+    })
+  }
+
   function categoryHandler() {
-    $('#choose-influencer, #choose-agency').click(function() {
+    $('#influencer, #agency').click(function() {
       var id = $(this).attr('id');
-      if (id === 'choose-influencer') {
+      if (id === 'influencer') {
         changeInputColor('red');
-      } else if (id === "choose-agency") {
+        changePlaceholders('Management');
+      } else if (id === "agency") {
         changeInputColor('blue');
+        changePlaceholders('Agency');
       }
     })
+  }
+
+  function changePlaceholders(type) {
+    $('#mgmtName').attr('placeholder', type + " Name");
+    $('#mgmtEmail').attr('placeholder', type + " Email");
+    $('#mgmtPhone').attr('placeholder', type + " Phone");
   }
 
   function changeInputColor(color) {
     var other = color === 'blue' ? 'red' : 'blue';
     $('.make3d-input').each(function(input) {
-      console.log(this);
-      $(this).addClass(color);
-      $(this).removeClass(other);
+      $(this).not('#influencer, #agency').addClass(color);
+      $(this).not('#influencer, #agency').removeClass(other);
     })
-    $('button').addClass(color);
-    $('button').removeClass(other);
+    $('button').not('.choice-button').addClass(color);
+    $('button').not('.choice-button').removeClass(other);
 
   }
 
@@ -56,15 +78,13 @@ $(document).ready(function() {
     $('#submit').click(function() {
       var name = $('#name').val();
       var email = $('#email').val();
-      var textarea = $('#textarea').val();
 
       if (!name) { shake($('#name')) }
       if (!email || !isEmail(email)) { shake($('#email')) }
-      if (!textarea) { shake($('#textarea')) }
 
-      if (name && email && isEmail(email) && textarea) {
-        // sendEmail(name, email, textarea);
-        document.getElementById("contact-us-form").submit();
+      if (name && email && isEmail(email)) {
+        console.log("submitting form");
+        document.getElementById("influencer-request-form").submit();
       }
     })
 

@@ -81,8 +81,8 @@
 
 
 
-      <form action="send-email.php" method="post" enctype="multipart/form-data" id="join-cogent-form">
-        <input type="hidden" name="form-name" value="join-cogent">
+      <form action="send-email.php" method="post" enctype="multipart/form-data" id="influencer-request-form">
+        <input type="hidden" name="form-name" value="influencer-form">
         <div class="col-xs-12" id="form">
           <div class="loud">
             Influencer Form
@@ -91,13 +91,28 @@
           <div class="soft">
             Please submit your info to be included in our influencer database!
           </div>
-          <div class="choose-category">
+
+          <!-- <div class="choose-category">
             Are you an <span id="choose-influencer">influencer</span> or an <span id="choose-agency">agency</span>?
+          </div> -->
+
+          <div class="category-block">
+            <div class="make3d-input" id="influencer">
+              <button class="choice-button" type="button"> INFLUENCER </button>
+              <div class="bottom"></div>
+              <div class="right"></div>
+              <div class="right2"></div>
+            </div>
+            <div class="spacer"> </div>
+            <div class="after-input make3d-input blue" id="agency">
+              <button class="choice-button" type="button"> AGENCY </button>
+              <div class="bottom"></div>
+              <div class="right"></div>
+              <div class="right2"></div>
+            </div>
           </div>
 
-
-
-          <div class="make3d-input">
+          <div class="after-input make3d-input">
             <input id="name" name="name" type="text" placeholder="Name">
             <div class="bottom"></div>
             <div class="right"></div>
@@ -140,21 +155,21 @@
           </div>
 
           <div class="after-input make3d-input">
-            <input id="mgmtName" name="mgmtName" type="text" placeholder="Management Contact Name">
+            <input id="mgmtName" name="managementName" type="text" placeholder="Management Name" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
           <div class="after-input make3d-input">
-            <input id="mgmtEmail" name="mgmtEmail" type="text" placeholder="Management Contact Email">
+            <input id="mgmtEmail" name="managementEmail" type="text" placeholder="Management Email" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>
           </div>
 
           <div class="after-input make3d-input">
-            <input id="mgmtPhone" name="mgmtPhone" type="text" placeholder="Management Contact Phone">
+            <input id="mgmtPhone" name="managementPhone" type="text" placeholder="Management Phone" autocomplete="off">
             <div class="bottom"></div>
             <div class="right"></div>
             <div class="right2"></div>

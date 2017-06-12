@@ -13,13 +13,37 @@
   .loud {
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
   .soft {
     font-size: 18px;
     line-height: 22px;
-    margin-bottom: 9px
+    margin-bottom: 30px;
   }
+
+  .category-block {
+    $width: .5%;
+    .spacer {
+      display: inline-block;
+      width: $width;
+    }
+    #influencer, #agency {
+      position: relative;
+      display: inline-block;
+      width: 36.5%;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    #agency button {
+      background: #1E60B1;
+    }
+  }
+
+  #influencer, #agency, #submit {
+    position: relative;
+  }
+
+
 
   .choose-category {
     font-size: 18px;
@@ -107,6 +131,7 @@
     }
     background: $cogent-red;
     color: white;
+
     &.blue {
       background: #1E60B1;
     }
@@ -122,6 +147,8 @@
     font-weight: 500;
   }
   .make3d-input {
+    position: relative;
+    z-index:1;
     #file {
       display:none;
     }
